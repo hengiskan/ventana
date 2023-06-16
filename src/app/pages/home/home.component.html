@@ -1,0 +1,229 @@
+
+
+  <!-- Intro Section -->
+  <div class="relative flex  overflow-y-auto">
+    <div [ngClass]="{'hidden': nabvisible, 'absolute': sobrenav}" class="sidebar  top-0 left-0 h-screen text-center bg-gray-900 z-50">
+      <div class="text-gray-100 text-xl">
+      <div class="p-2.5 mt-1 flex items-center">
+      <!-- <i class="bi bi-app-indicator px-3 py-2 bg-blue-600 rounded-md"></i>-->
+      <h1 class="font-bold text-gray-200 text-[20px] ml-3 pr-10">WOODMACHINE</h1>
+      <i *ngIf="btncerrar" (click)="cerrnab()" class="bi bi-x-square flex text-3x1 py-1 cursor-pointer lg:hidden te"></i>
+      </div>
+      <hr class="my-2 text-gray-600">
+      </div>
+      <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer bg-gray-700 text-white">
+      <i class="bi bi-search text-sm"></i>
+      <input type="text" placeholder="Search" class="text-[15px] ml-4 w-full bg-transparent focus:outline-none">
+      </div>
+      <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
+      <i class="bi bi-house-door-fill "></i>
+      <span class="text-[15px] ml-4 text-gray-200">Home</span>
+      </div>
+      <hr class="my-4 text-gray-600">
+      <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white" (click)="drop1()">
+      <i class="bi bi-chat-left-text-fill"></i>
+      <div class="flex justify-between w-full items-center">
+      <span class="text-[15px] ml-4 text-gray-200">Empresas</span>
+      <span class="text-sm rotate-180" id="arrow1"></span>
+      <i class="bi bi-chevron-down"></i>
+      </div>
+      </div>
+      <div class="text-left text-sm font-thing mt-2 w-4/5 mx-auto text-gray-200" id="sub1">
+      <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1"(click)="compo1()">Ver</h1>
+      <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1"(click)="compo2()">Crear</h1>
+      <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1"(click)="compo3()">Editar</h1>
+      </div>
+      <hr class="my-4 text-gray-600">
+      <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white" (click)="drop2()">
+        <i class="bi bi-chat-left-text-fill"></i>
+        <div class="flex justify-between w-full items-center">
+        <span class="text-[15px] ml-4 text-gray-200">Departamentos</span>
+        <span class="text-sm rotate-180" id="arrow2"></span>
+        <i class="bi bi-chevron-down"></i>
+    </div>
+      </div>
+      <div class="text-left text-sm font-thing mt-2 w-4/5 mx-auto text-gray-200" id="sub2">
+        <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1"(click)="compodep1()">Ver</h1>
+        <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1"(click)="compodep2()">Crear</h1>
+        <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1"(click)="compodep3()">Editar</h1>
+        </div>
+        <hr class="my-4 text-gray-600">
+        <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white" (click)="drop3()">
+          <i class="bi bi-chat-left-text-fill"></i>
+          <div class="flex justify-between w-full items-center">
+          <span class="text-[15px] ml-4 text-gray-200">Empleados</span>
+          <span class="text-sm rotate-180" id="arrow3"></span>
+          <i class="bi bi-chevron-down"></i>
+      </div>
+        </div>
+        <div class="text-left text-sm font-thing mt-2 w-4/5 mx-auto text-gray-200" id="sub3">
+          <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1"(click)="compoemplo1()">Ver</h1>
+          <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1"(click)="compoemplo2()">Crear</h1>
+          <h1 class="cursor-pointer p-2 hover:bg-gray-700 rounded-md mt-1"(click)="compoemplo3()">Editar</h1>
+          </div>
+      
+      <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-blue-600 text-white">
+      <i class="bi bi-box-arrow-in-right"></i>
+      <span class="text-[15px] ml-4 text-gray-200">Logout</span>
+      </div>
+    </div>
+    <div class="h-screen w-screen  overflow-y-auto text-center bg-gray-300 ">
+     <button *ngIf="nabvisible" (click)="cambnab()" class="p-4 flex items-center lg:hidden rounded-md ">
+      <i class="i bi-card-list px-3 py-2 bg-blue-600 rounded-md"></i>
+     </button>
+     <app-principal></app-principal>
+     <div *ngIf="mostrar==='comp1'"class="parent-component">
+        <app-veremp></app-veremp>
+     </div>
+     <div *ngIf="mostrar==='comp2'"class="parent-component flex justify-center pt-20">
+        <app-crearemp></app-crearemp>
+     </div>
+     <div *ngIf="mostrar==='comp3'"class="parent-component flex justify-center ">
+      <app-editemp></app-editemp>
+   </div>
+   <div *ngIf="mostrar==='compodep1'"class="parent-component">
+        <app-verdep></app-verdep>
+    </div>
+    <div *ngIf="mostrar==='compodep2'"class="parent-component flex justify-center pt-20">
+        <app-creardep></app-creardep>
+    </div>
+    <div *ngIf="mostrar==='compodep3'"class="parent-component flex justify-center ">
+      <app-editdep></app-editdep>
+    </div>
+    <div *ngIf="mostrar==='compoemplo1'"class="parent-component mx-auto w-auto">
+      <app-veremplo></app-veremplo>
+  </div>
+  <div *ngIf="mostrar==='compoemplo2'"class="parent-component flex justify-center pt-20">
+      <app-crearemplo></app-crearemplo>
+  </div>
+  <div *ngIf="mostrar==='compoemplo3'"class="parent-component mx-auto w-auto flex justify-center ">
+    <app-editemplo></app-editemplo>
+  </div>
+    </div>
+    
+  </div>
+  
+  <!--<div>
+    <button (click)="obtenerDatos()">Obtener datos del servidor</button>
+    <p>{{ datos }}</p>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of respvec">
+        <td>{{ item.id }}</td>
+        <td>{{ item.created_by }}</td>
+        <td>{{ item.created_date }}</td>
+        <td>{{ item.modified_by }}</td>
+        <td>{{ item.modified_date }}</td>
+        <td>{{ item.status}}</td>
+        <td>{{ item.address }}</td>
+        <td>{{ item.name}}</td>
+        <td>{{ item.phone }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  <form (ngSubmit)="submitForm()" #myForm="ngForm">
+    <label for="created_by">created_by:</label>
+    <input type="text" id="created_by" name="created_by" [(ngModel)]="formData.created_by" required>
+  
+    <label for="created_date">created_date:</label>
+    <input id="created_date" type="datetime-local" name="created_date" [(ngModel)]="formData.created_date">
+
+    <label for="modified_by">modified_by:</label>
+    <input type="text" id="modified_by" name="modified_by" [(ngModel)]="formData.modified_by" required>
+
+    <label for="modified_date">modified_date:</label>
+    <input id="modified_date" type="datetime-local" name="modified_date" [(ngModel)]="formData.modified_date">
+
+    <label for="status">status:</label>
+    <input type="checkbox" [(ngModel)]="isChecked" name="status">
+
+    <label for="address">address:</label>
+    <input type="text" id="address" name="address" [(ngModel)]="formData.address" required>
+
+    <label for="name">name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="formData.name" required>
+
+    <label for="phone">phone:</label>
+    <input type="text" id="phone" name="phone" [(ngModel)]="formData.phone" required>
+  
+    <button type="submit">Enviar</button>
+  </form>
+
+  <h2>Formulario de actualización</h2>
+
+<form (ngSubmit)="actualizarRegistro()">
+  <div>
+    <label>ID: </label>
+    <input type="text" name="id" [(ngModel)]="seleccionado.id" readonly>
+  </div>
+  <div>
+    <label>Nombre: </label>
+    <input type="text" name="nombre" [(ngModel)]="seleccionado.nombre">
+  </div>
+  <div>
+    <label>Descripción: </label>
+    <input type="text" name="descripcion" [(ngModel)]="seleccionado.descripcion">
+  </div>
+
+  
+
+  <button type="submit">Actualizar</button>
+</form>
+
+<hr>
+
+<h2>Registros</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let registro of registros" (click)="seleccionarRegistro(registro)">
+      <td>{{ registro.id }}</td>
+      <td>{{ registro.nombre }}</td>
+      <td>{{ registro.descripcion }}</td>
+     
+    </tr>
+  </tbody>
+</table>
+<table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let registro of registros" (click)="seleccionarRegistro(registro)">
+        <td>
+          <label *ngIf="!registro.editable">{{ registro.nombre }}</label>
+          <input *ngIf="registro.editable" type="text" [(ngModel)]="registro.nombre">
+        </td>
+        <td>
+          <label *ngIf="!registro.editable">{{ registro.descripcion }}</label>
+          <input *ngIf="registro.editable" type="text" [(ngModel)]="registro.descripcion">
+        </td>
+        <td>
+          <input type="checkbox" [(ngModel)]="registro.editable">
+        </td>
+      </tr>
+    </tbody>
+  </table>-->
+  

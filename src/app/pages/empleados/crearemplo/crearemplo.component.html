@@ -1,0 +1,56 @@
+<div class="flex justify-center bg-blue-500 text-white text-sm font-bold px-4 py-3" role="alert">
+    <svg class="fill-current  w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z"/></svg>
+    <p>CREAR EMPLEADOS</p>
+  </div>
+  <div class="flex top-20">
+      <form (ngSubmit)="submitForm()" #myForm="ngForm" class="bg-gray-600 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <div class="mb-6 flex items-center">
+              <label for="created_by" class="pl-0 pr-5 block mb-2  text-sm font-medium text-gray-900 dark:text-white whitespace-nowrap">Creado por:</label>
+              <input type="text" id="created_by" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light " name="created_by" [(ngModel)]="formData.created_by"  required>
+            </div>
+            <div class="mb-6 flex items-center">
+              <label for="created_date" class="pl-0 pr-5 block mb-2 text-sm font-medium text-gray-900 dark:text-white whitespace-nowrap">Fecha creacion:</label>
+              <input type="datetime-local" id="created_date" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light " name="created_date" [(ngModel)]="formData.created_date" required>
+            </div>
+            <div class="mb-6 flex">
+              <label for="modified_by" class="pl-0 pr-5 block mb-2 text-sm font-medium text-gray-900 dark:text-white whitespace-nowrap">Modificado por:</label>
+              <input type="text" id="modified_by" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="modified_by" [(ngModel)]="formData.modified_by" required>
+            </div>
+            <div class="mb-6 flex">
+              <label for="modified_date" class="pl-0 pr-5 block mb-2 text-sm font-medium text-gray-900 dark:text-white whitespace-nowrap">Fecha modificacion:</label>
+              <input type="datetime-local" id="modified_date" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="modified_date" [(ngModel)]="formData.modified_date" required>
+            </div>
+            <div class="flex items-start mb-6">
+              <div class="flex items-center h-5">
+                <input type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" [(ngModel)]="chec" name="status" required>
+              </div>
+              <label for="status" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Estado</label>
+            </div>
+            <div class="mb-6 flex">
+                <label for="age" class=" pl-0 pr-5 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Edad:</label>
+                <input type="number" id="age" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="age" [(ngModel)]="formData.age"  required>
+              </div>
+            <div class="mb-6 flex">
+              <label for="email" class=" pl-0 pr-5 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email:</label>
+              <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="email" [(ngModel)]="formData.email"  required>
+            </div>
+            <div class="mb-6 flex">
+              <label for="name" class="pl-0 pr-5 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre:</label>
+              <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="name" [(ngModel)]="formData.name"  required>
+            </div>
+            <div class="mb-6 flex">
+              <label for="position" class="pl-0 pr-5 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Posicion:</label>
+              <input type="text" id="position" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="position" [(ngModel)]="formData.position"  required>
+            </div>
+            <div class="mb-6 flex">
+                <label for="surname" class="pl-0 pr-5 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Apellido:</label>
+                <input type="text" id="surname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" name="surname" [(ngModel)]="formData.surname"  required>
+              </div>
+            <div>
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Crear</button> 
+            </div>
+            <div>
+              <label>{{ serverResponse }}</label>
+            </div>
+          </form>
+    </div>
